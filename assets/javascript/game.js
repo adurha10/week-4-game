@@ -172,8 +172,7 @@ $("#fight-button").on("click", function(){
 			noDefender = true;
 			round = 1;
 
-			// Refresh screen and update "instructions" display
-			ConstructButtons();
+			// Updates "instructions" display
 			$("#instructions").text("Game Over!! Click a champion to begin again.")
 			
 		// Check to see if the defender died
@@ -191,9 +190,6 @@ $("#fight-button").on("click", function(){
 			// Removes "defender" class so item will not be displayed
 			$(".defender").removeClass("defender");
 
-			// Refreshes screen
-			ConstructButtons();
-
 			// Checks for other opponents left to fight
 			if (opponentsRemaining > 0){
 				// When oppenents remain -- update 'instructions' display and add to round counter
@@ -201,10 +197,18 @@ $("#fight-button").on("click", function(){
 				round++;
 			} else {
 				// When all opponents are dead -- congratulate user -- initiate nerd joke
-				$("#instructions").text("You won the tourney! You may now name your 'Queen of Love and Beauty' --TRY NOT TO START A WAR!--");
-				round = 0;
+				$("#instructions").text("You won the tourney! You may now name your 'Queen of Love and Beauty' --TRY NOT TO START A WAR!-- Click a new champion if you want to play again.");
+				for (var k = 0; k < characterObjects.length; k++) {
+				characterObjects[k].location = "characters";
+				characterObjects[k].hp = 100;
+				}
+				noDefender = true;
+				round = 1;
 			}
 		}
+
+		// Refreshes screen
+		ConstructButtons();
 
 	}
 });
