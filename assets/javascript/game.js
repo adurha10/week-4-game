@@ -114,14 +114,11 @@ function ConstructButtons(){
 			characterButton.addClass("foe");
 		}
 		if (characterObjects[i].location === "characters"){
-			console.log(characterObjects[i]);
-			console.log(characterObjects[i].tooltip);
 			characterButton.prop("title", characterObjects[i].tooltip);
-			
 		}
 
 		// Assigns click handler function
-		characterButton.on("click", clickHandler );
+		characterButton.on("click", clickHandler);
 
 		// Assigns img file used to display
 		characterButton.html("<img class = 'img-responsive character-img' src = '" + characterObjects[i].imgSrc +"'>");
