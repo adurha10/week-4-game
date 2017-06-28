@@ -25,14 +25,15 @@
 	<!-- My css styling -->
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<header class="navbar nav"></header>
-<body class="container">
-	<div class="row" id="characters"></div>
-	<div class="row" id="chosen-one"></div>
-	<div class="row" id="opponents"></div>
-	<div class="row" id="fighter"></div>
-	<button id="fight-button"></button>
-	<div class="row" id="defender"></div>
+<header class="navbar nav"><div id="headerBg"></div><h1 class="text-center" id = "title">Welcome to the tourney at Harrenhall!</h1><br><h2 class="text-center" id="instructions">Click a character to choose your champion.</h2></header>
+
+<body class="container bg" >
+	<div class="row" id="charactersRow"></div>
+	<div class="row" id="chosen-oneRow"></div>
+	<div class="row" id="opponentsRow"></div>
+	<div class="row" id="fighterRow"></div>
+	<button class = "btn btn-danger" id="fight-button">FIGHT!</button>
+	<div class="row" id="defenderRow"></div>
 </body>
 <script src="assets/javascript/game.js"></script>
 </html>
