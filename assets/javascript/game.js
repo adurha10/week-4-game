@@ -16,7 +16,8 @@ var characterObjects = [
 		atk: 7,
 		ctAtk: 15,
 		location: "characters",
-		imgSrc: "assets/images/laughing_tree.png"
+		imgSrc: "assets/images/laughing_tree.png",
+		tooltip: "The Knight of the Laughing Tree was a mystery knight who fought at the tourney at Harrenhal in 281 AC. He defended the honor of a crannogman by challenging and defeating three knights whose squires had bullied the crannogman, demanding that they chastise the squires in order to ransom back their horses and armor. The Knight of the Laughing Tree is so-called because of the blazon on his shield, a smiling heart tree. His true identity remains unknown."
 	},
 	brandon = {
 		name: "brandon",
@@ -24,7 +25,8 @@ var characterObjects = [
 		atk: 7,
 		ctAtk: 10,
 		location: "characters",
-		imgSrc: "assets/images/stark.png"
+		imgSrc: "assets/images/stark.png",
+		tooltip: "Brandon Stark was the oldest son of Lord Rickard Stark and Lady Lyarra Stark and the heir to Winterfell prior to Robert's Rebellion. His younger siblings were Eddard, Lyanna, and Benjen."
 	},
 	rhaegar = {
 		name: "rhaegar",
@@ -32,7 +34,8 @@ var characterObjects = [
 		atk: 25,
 		ctAtk: 25,
 		location: "characters",
-		imgSrc: "assets/images/targaryen.png"
+		imgSrc: "assets/images/targaryen.png",
+		tooltip: "Prince Rhaegar Targaryen was the eldest son of King Aerys II Targaryen and his sister-wife, Queen Rhaella. As heir-apparent, he was the Prince of Dragonstone and crown prince for the Iron Throne. Rhaegar was popular with the smallfolk during his lifetime, but he died in Robert's Rebellion which was triggered in part by his naming of Lyanna Stark as 'Queen of Love and Beauty' after he won the Tourney at Harrenhal. Lyanna was betrothed to Robert Baratheon at the time. Rhaegar was slain in single combat by Robert Baratheon at the ruby ford during the Battle of the Trident."
 	},
 	barisstan = {
 		name: "barisstan",
@@ -40,7 +43,8 @@ var characterObjects = [
 		atk: 12,
 		ctAtk: 15,
 		location: "characters",
-		imgSrc: "assets/images/selmy.png"
+		imgSrc: "assets/images/selmy.png",
+		tooltip: "Ser Barristan Selmy, also called Barristan the Bold, is a knight from House Selmy and the Lord Commander of the Kingsguard of Robert I Baratheon. A celebrated hero, he has served in the Kingsguard since a time when these knights were still considered to be the greatest of the Seven Kingdoms."
 	}];
 
 // Event handler for clicks on characters	
@@ -108,6 +112,12 @@ function ConstructButtons(){
 		}
 		if (characterObjects[i].location === "opponents" || characterObjects[i].location === "defender"){
 			characterButton.addClass("foe");
+		}
+		if (characterObjects[i].location === "characters"){
+			console.log(characterObjects[i]);
+			console.log(characterObjects[i].tooltip);
+			characterButton.prop("title", characterObjects[i].tooltip);
+			
 		}
 
 		// Assigns click handler function
